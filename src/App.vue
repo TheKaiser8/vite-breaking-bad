@@ -1,18 +1,22 @@
 <script>
-import AppTitle from './components/AppTitle.vue';
+import AppHeader from './components/AppHeader.vue';
+
 export default {
-  components: {
-    AppTitle
-  }
+    components: {
+    AppHeader,
+    } 
 }
 </script>
 
 <template>
-  <div class="container text-center">
-    <AppTitle/>
-  </div>
+    <body>
+        <AppHeader/>
+    </body>
 </template>
 
 <style lang="scss">
 @import './style/global.scss';
+body {
+    background-color: #2e3a46;
+}
 </style>
