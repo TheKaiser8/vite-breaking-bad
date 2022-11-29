@@ -15,18 +15,27 @@ export default {
             store
         }
     },
-    created() {
-        axios.get('https://www.breakingbadapi.com/api/characters')
-        .then((response) => {
+    methods: {
+        getCharacter() {
+            axios.get('https://www.breakingbadapi.com/api/characters', {
+                params: {
+                    category: this.store.categoryValue,
+                }
+            })
+            .then((response) => {
             this.store.characters = response.data;
-        })
+            });
+        },
+    },
+    created() {
+        this.getCharacter();
     }
 }
 </script>
 
 <template>
     <main class="container">
-        <AppSelect/>
+        <AppSelect @search="getCharacter" />
 
         <SectionCharacters/>
     </main>
