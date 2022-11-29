@@ -1,6 +1,7 @@
 import { reactive } from 'vue';
 
 export const store = reactive({
-    categoryValue: '',
+    categoryValue: 'Select category',
+    statusValue: 'Select status',
     characters: [],
 });

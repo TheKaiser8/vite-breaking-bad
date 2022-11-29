@@ -18,7 +18,7 @@ export default {
 <template>
     <section id="characters" class="p-5">
         <div class="found-characters ps-3 py-4">
-            <span class="fw-bold">Found 62 characters</span>
+            <span class="fw-bold">Found {{ store.characters.length }} characters</span>
         </div>
         <div class="d-flex flex-wrap">
             <CharacterCard
