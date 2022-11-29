@@ -1,4 +1,6 @@
 <script>
+import axios from 'axios';
+import { store } from '../../store.js';
 import AppSelect from './AppSelect.vue';
 import SectionCharacters from './SectionCharacters.vue';
 
@@ -7,6 +9,17 @@ export default {
     components: {
         AppSelect,
         SectionCharacters,
+    },
+    data() {
+        return {
+            store
+        }
+    },
+    created() {
+        axios.get('https://www.breakingbadapi.com/api/characters')
+        .then((response) => {
+            this.store.characters = response.data;
+        })
     }
 }
 </script>

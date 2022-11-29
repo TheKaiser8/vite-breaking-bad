@@ -1,5 +1,5 @@
 <script>
-import axios from 'axios';
+import { store } from '../../store.js';
 import CharacterCard from './CharacterCard.vue';
 
 export default {
@@ -9,14 +9,8 @@ export default {
     },
     data() {
         return {
-            characters: [],
+            store,
         }
-    },
-    created() {
-        axios.get('https://www.breakingbadapi.com/api/characters')
-        .then((response) => {
-            this.characters = response.data;
-        })
     }
 }
 </script>
@@ -28,7 +22,7 @@ export default {
         </div>
         <div class="d-flex flex-wrap">
             <CharacterCard
-            v-for="character in characters"
+            v-for="character in store.characters"
             :info="character"
             class="character-card"
             />
