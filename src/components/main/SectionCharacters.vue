@@ -46,7 +46,18 @@ export default {
     }
 
     .character-card {
-        width: calc((100% / 5) - 2rem);
+        @include media-breakpoint-up(sm) {
+            width: calc((100% / 2) - 2rem);
+        }
+        @include media-breakpoint-up(md) {
+            width: calc((100% / 3) - 2rem);
+        }
+        @include media-breakpoint-up(lg) {
+            width: calc((100% / 4) - 2rem);
+        }
+        @include media-breakpoint-up(xl) {
+            width: calc((100% / 5) - 2rem);
+        }
     }
 }
 </style>
