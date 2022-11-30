@@ -20,7 +20,6 @@ export default {
             axios.get('https://www.breakingbadapi.com/api/characters', {
                 params: {
                     category: this.store.categoryValue,
-                    status: this.store.statusValue,
                 }
             })
             .then((response) => {

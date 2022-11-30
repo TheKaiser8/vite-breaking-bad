@@ -18,15 +18,6 @@ export default {
             <option value="Breaking Bad">Breaking Bad</option>
             <option value="Breaking Bad, Better Call Saul">Breaking Bad, Better Call Saul</option>
         </select>
-
-        <!-- Prova con select per lo status: -->
-        <select class="form-select w-auto" name="status" v-model="store.statusValue" @change="$emit('search')">
-            <option value="" selected>Select status</option>
-            <option value="Alive">Alive</option>
-            <option value="Deceased">Deceased</option>
-            <option value="Presumed dead">Presumed dead</option>
-            <option value="Unknown">Unknown</option>
-        </select>
    </form>
 </template>
 
